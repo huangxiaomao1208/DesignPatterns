@@ -6,13 +6,22 @@ namespace CreateTypeDesignPatterns
 {
     /// <summary>
     /// 单例模式-非线程安全
+    /// 懒汉式 - 如果非线程安全不要使用
+    /// 饿汉式 - 没有线程不安全的问题
+    /// 既然饿汉式没有线程安全问题，为什么不使用饿汉式？应该是延迟加载的问题
     /// </summary>
     public class Singleton
     {
         private Singleton()
         { 
         }
+
+
+        //懒汉式
         private static Singleton _instance = null;
+
+        //饿汉式 (直接实例化对象)
+        //private static Singleton _instance = new Singleton();
 
         public static Singleton GetInstance()
         {
