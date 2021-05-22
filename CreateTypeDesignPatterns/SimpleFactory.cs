@@ -12,9 +12,9 @@ namespace CreateTypeDesignPatterns
     /// </summary>
     public class SimpleFactory
     {
-        public static Product CreateProduct(string type)
+        public static IProduct CreateProduct(string type)
         {
-            Product product = null;
+            IProduct product = null;
             switch (type)
             {
                 case "1":
@@ -33,12 +33,12 @@ namespace CreateTypeDesignPatterns
     /// <summary>
     /// 接口  这里可以使用抽象类代替
     /// </summary>
-    public interface Product
+    public interface IProduct
     {
         void Show();
     }
 
-    public class Product1 : Product
+    public class Product1 : IProduct
     {
         public void Show()
         {
@@ -46,14 +46,14 @@ namespace CreateTypeDesignPatterns
         }
     }
 
-    public class Product2 : Product
+    public class Product2 : IProduct
     {
         public void Show()
         {
             Console.WriteLine("Product2 - Show");
         }
     }
-    public class Product3 : Product
+    public class Product3 : IProduct
     {
         public void Show()
         {

@@ -23,12 +23,23 @@ namespace CreateTypeDesignPatterns
 
 
             #region 简单工厂
-            Product product1 = SimpleFactory.CreateProduct("1");
-            product1.Show();
-            Product product2 = SimpleFactory.CreateProduct("2");
-            product2.Show();
-            Product product3 = SimpleFactory.CreateProduct("3");
-            product3.Show();
+            //IProduct product1 = SimpleFactory.CreateProduct("1");
+            //product1.Show();
+            //IProduct product2 = SimpleFactory.CreateProduct("2");
+            //product2.Show();
+            //IProduct product3 = SimpleFactory.CreateProduct("3");
+            //product3.Show();
+            #endregion
+
+            #region 工厂方法
+            //产品1工厂
+            Factory factory1 = new Product1_FM_Factory();
+            //创建对象调用方法
+            FactoryMethord.CreateProcut_FM(factory1).Show();
+            Factory factory2 = new Product2_FM_Factory();
+            FactoryMethord.CreateProcut_FM(factory2).Show();
+            Factory factory3 = new Product3_FM_Factory();
+            FactoryMethord.CreateProcut_FM(factory3).Show();
             #endregion
 
             Console.ReadLine();
