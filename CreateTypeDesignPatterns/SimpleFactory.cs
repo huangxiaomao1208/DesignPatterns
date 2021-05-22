@@ -5,7 +5,7 @@ using System.Text;
 namespace CreateTypeDesignPatterns
 {
     /// <summary>
-    /// 简单工厂模式
+    /// 简单工厂模式 - 它不属于23种设计模式之一
     /// 用一个工厂创建不同类型的对象
     /// 优点：上端传递一个对象类型，就可以得到相对应的对象
     /// 缺点：如果新增一个对象，需要修改工厂创建对象的方法
