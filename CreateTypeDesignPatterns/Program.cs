@@ -32,15 +32,32 @@ namespace CreateTypeDesignPatterns
             #endregion
 
             #region 工厂方法
-            //产品1工厂
-            Factory factory1 = new Product1_FM_Factory();
-            //创建对象调用方法
-            FactoryMethord.CreateProcut_FM(factory1).Show();
-            Factory factory2 = new Product2_FM_Factory();
-            FactoryMethord.CreateProcut_FM(factory2).Show();
-            Factory factory3 = new Product3_FM_Factory();
-            FactoryMethord.CreateProcut_FM(factory3).Show();
+            //IProduct_FM productFM;
+            ////产品1工厂
+            //Factory factory1 = new Product1_FM_Factory();
+            ////创建对象调用方法
+            //productFM = FactoryMethord.CreateProcut_FM(factory1);
+            //productFM.Show();
+            //Factory factory2 = new Product2_FM_Factory();
+            //productFM = FactoryMethord.CreateProcut_FM(factory2);
+            //productFM.Show();
+            //Factory factory3 = new Product3_FM_Factory();
+            //productFM =FactoryMethord.CreateProcut_FM(factory3);
+            //productFM.Show();
             #endregion
+
+
+            #region 抽象工厂
+            AbstractFactory iosFactory = new IOSFactory();
+            iosFactory.CreatProductA().Show();
+            iosFactory.CreatProductB().Show();
+            AbstractFactory androidFactory = new AndroidFactory();
+            androidFactory.CreatProductA().Show();
+            androidFactory.CreatProductB().Show();
+
+            #endregion 
+
+
 
             Console.ReadLine();
 
