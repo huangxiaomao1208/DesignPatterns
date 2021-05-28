@@ -48,14 +48,23 @@ namespace CreateTypeDesignPatterns
 
 
             #region 抽象工厂
-            AbstractFactoryMethod iosFactory = new IOSFactory();
-            iosFactory.CreatProductA().Show();
-            iosFactory.CreatProductB().Show();
-            AbstractFactoryMethod androidFactory = new AndroidFactory();
-            androidFactory.CreatProductA().Show();
-            androidFactory.CreatProductB().Show();
+            //AbstractFactoryMethod iosFactory = new IOSFactory();
+            //iosFactory.CreatProductA().Show();
+            //iosFactory.CreatProductB().Show();
+            //AbstractFactoryMethod androidFactory = new AndroidFactory();
+            //androidFactory.CreatProductA().Show();
+            //androidFactory.CreatProductB().Show();
 
-            #endregion 
+            #endregion
+
+
+            #region 原型模式
+
+            //Prototype.Show();
+            Prototype.ShowDeepCloneBySerialize();
+            Prototype.ShowDeepCloneByReflect();
+
+            #endregion
 
 
 

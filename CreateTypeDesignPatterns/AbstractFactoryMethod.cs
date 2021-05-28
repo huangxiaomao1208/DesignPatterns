@@ -8,7 +8,7 @@ namespace CreateTypeDesignPatterns
     /// 抽象工厂
     /// 抽象工厂和工厂方法差不多，只是抽象方法适用于创建一组对象（不同的组里面的对象方法都不相同）
     /// </summary>
-    public class AbstractFactoryMethod
+    public class AbstractFactory
     {
         
     }
