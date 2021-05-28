@@ -48,10 +48,10 @@ namespace CreateTypeDesignPatterns
 
 
             #region 抽象工厂
-            AbstractFactory iosFactory = new IOSFactory();
+            AbstractFactoryMethod iosFactory = new IOSFactory();
             iosFactory.CreatProductA().Show();
             iosFactory.CreatProductB().Show();
-            AbstractFactory androidFactory = new AndroidFactory();
+            AbstractFactoryMethod androidFactory = new AndroidFactory();
             androidFactory.CreatProductA().Show();
             androidFactory.CreatProductB().Show();
 
@@ -62,5 +62,8 @@ namespace CreateTypeDesignPatterns
             Console.ReadLine();
 
         }
+
+        
     }
+   
 }

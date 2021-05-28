@@ -53,6 +53,7 @@ namespace CreateTypeDesignPatterns
             Console.WriteLine("Product2 - Show");
         }
     }
+
     public class Product3 : IProduct
     {
         public void Show()

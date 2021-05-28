@@ -8,7 +8,7 @@ namespace CreateTypeDesignPatterns
     /// 抽象工厂
     /// 抽象工厂和工厂方法差不多，只是抽象方法适用于创建一组对象（不同的组里面的对象方法都不相同）
     /// </summary>
-    public class AbstractMethod
+    public class AbstractFactoryMethod
     {
         
     }
@@ -61,13 +61,13 @@ namespace CreateTypeDesignPatterns
         }
     }
 
-    public abstract class AbstractFactory 
+    public abstract class AbstractFactoryMethod 
     {
         public abstract IProductA CreatProductA();
         public abstract IProductB CreatProductB();
     }
 
-    public class IOSFactory : AbstractFactory
+    public class IOSFactory : AbstractFactoryMethod
     {
         public override IProductA CreatProductA()
         {
@@ -80,7 +80,7 @@ namespace CreateTypeDesignPatterns
         }
     }
 
-    public class AndroidFactory : AbstractFactory
+    public class AndroidFactory : AbstractFactoryMethod
     {
         public override IProductA CreatProductA()
         {
