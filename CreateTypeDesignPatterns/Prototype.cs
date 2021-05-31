@@ -25,12 +25,12 @@ namespace CreateTypeDesignPatterns
             {
                 Name = "product1",
                 Num = 1,
-                type = new Type() { TypeId = 1 }
+                Type = new Type() { TypeId = 1 }
             };
             var product2 = product.ShallowClone();
             product2.Num = 2;
             product2.Name = "product2";
-            product2.type.TypeId = 2;
+            product2.Type.TypeId = 2;
 
             //值类型完全拷贝
             Console.WriteLine(product.Num);//1
@@ -43,16 +43,16 @@ namespace CreateTypeDesignPatterns
 
             //引用类型的浅拷贝，这里就体现出来了
             //修改了product2的type,product1中的type也随着改变
-            Console.WriteLine(product.type.TypeId); //2
-            Console.WriteLine(product2.type.TypeId); //2  
+            Console.WriteLine(product.Type.TypeId); //2
+            Console.WriteLine(product2.Type.TypeId); //2  
 
 
-            product2.type = new Type() { TypeId = 3 };
+            product2.Type = new Type() { TypeId = 3 };
             //这里修改了product2中的type值，为什么product中的type没有发生改变呢？
             //因为product2重新创建了一个type,和product中的type指向的不是同一个堆内存空间了
             //上面所提到的字符串可以参考这一条
-            Console.WriteLine(product.type.TypeId); //2
-            Console.WriteLine(product2.type.TypeId); //3
+            Console.WriteLine(product.Type.TypeId); //2
+            Console.WriteLine(product2.Type.TypeId); //3
 
         }
 
@@ -60,36 +60,39 @@ namespace CreateTypeDesignPatterns
         public static void ShowDeepCloneBySerialize()
         {
             PrototypeProduct prototype = new PrototypeProduct();
-            prototype.type = new Type() { TypeId = 1 };
+            prototype.Type = new Type() { TypeId = 1 };
             var prototype2 = (PrototypeProduct)prototype.DeepCloneBySerialize();
-            prototype2.type.TypeId = 2;
-            Console.WriteLine(prototype.type.TypeId);
-            Console.WriteLine(prototype2.type.TypeId);
+            prototype2.Type.TypeId = 2;
+            Console.WriteLine(prototype.Type.TypeId);
+            Console.WriteLine(prototype2.Type.TypeId);
         }
 
         public static void ShowDeepCloneByReflect()
         {
             PrototypeProduct prototype = new PrototypeProduct();
-            prototype.type = new Type() { TypeId = 1};
+            prototype.Type = new Type() { TypeId = 1};
             var prototype2 = (PrototypeProduct)prototype.DeepCloneByReflect();
-            prototype2.type.TypeId = 3;
-            Console.WriteLine(prototype.type.TypeId);
-            Console.WriteLine(prototype2.type.TypeId);
+            prototype2.Type.TypeId = 3;
+            Console.WriteLine(prototype.Type.TypeId);
+            Console.WriteLine(prototype2.Type.TypeId);
         }
     }
 
     [Serializable]
     public class PrototypeProduct
     {
-
         public int Num { get; set; }
+
         public string Name { get; set; }
 
-        public Type type { get; set; }
+        public Type Type { get; set; }
+
+ 
 
         //浅拷贝
         public PrototypeProduct ShallowClone()
         {
+            //MemberwiseClone是Protected级别的，只能在当前类或者其子类使用
             return (PrototypeProduct)this.MemberwiseClone();
         }
     }
@@ -99,6 +102,9 @@ namespace CreateTypeDesignPatterns
     {
         public int TypeId { get; set; }
     }
+
+
+ 
 
     public static class DeepClone
     {
@@ -157,5 +163,7 @@ namespace CreateTypeDesignPatterns
             }
             return result;
         }
+
+       
     }
 }

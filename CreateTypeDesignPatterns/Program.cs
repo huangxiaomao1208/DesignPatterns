@@ -1,5 +1,6 @@
 ﻿using System;
 
+
 /// <summary>
 /// 创建型设计模式
 /// </summary>
@@ -58,13 +59,18 @@ namespace CreateTypeDesignPatterns
             #endregion
 
 
+             
+
             #region 原型模式
 
             //Prototype.Show();
-            Prototype.ShowDeepCloneBySerialize();
-            Prototype.ShowDeepCloneByReflect();
+            //Prototype.ShowDeepCloneBySerialize();
+            //Prototype.ShowDeepCloneByReflect();
 
             #endregion
+
+            #region
+#n
 
 
 
