@@ -13,7 +13,8 @@ namespace CreateTypeDesignPatterns
     public class Singleton
     {
         private Singleton()
-        { 
+        {
+            string s = "";
         }
 
         //懒汉式
