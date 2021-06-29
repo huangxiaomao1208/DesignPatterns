@@ -16,8 +16,6 @@ namespace CreateTypeDesignPatterns
         { 
         }
 
-
-
         //懒汉式
         private static Singleton _instance = null;
 
