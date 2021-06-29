@@ -16,6 +16,8 @@ namespace CreateTypeDesignPatterns
         {
             string s = "";
 
+
+
         }
 
         //懒汉式
